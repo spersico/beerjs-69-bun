@@ -1,10 +1,10 @@
-import express from 'express';
-const app = express();
+import http from 'http';
 
-app.get('/', (req, res) => {
-  res.send('Hello BeerJS!');
+const server = http.createServer((request, response) => {
+  response.writeHead(200, { 'Content-Type': 'text/plain' });
+  response.end('Hello Beer!');
 });
 
-app.listen(8000, () => {
-  console.log(`Lito el poio`);
-});
+server.listen(process.env.PORT || 8000);
+
+console.log('Server running at http://localhost:%d', process.env.PORT || 8000);
