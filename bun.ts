@@ -12,15 +12,16 @@ api.post('/posts', async (c) => {
   return c.json({ incoming: post });
 });
 
-api.get('/posts', async (c) => {
-  return c.json({ date: new Date().toJSON() });
+app.get('/', async (c) => {
+  return c.text('Hello BeerJS');
 });
 
 app.route('/api', api);
 
 export default {
-  port: 3000,
+  port: 8000,
   fetch: app.fetch,
 };
 
 // bun bun.ts
+// sudo siege http://127.0.0.1:8000 -t10s
