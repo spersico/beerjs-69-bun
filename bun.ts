@@ -3,7 +3,7 @@ import { logger } from 'hono/logger';
 import { cors } from 'hono/cors';
 
 const app = new Hono();
-app.use('*', logger());
+// app.use('*', logger()); // SEGFAULT
 app.use('*', cors());
 
 const api = new Hono();
