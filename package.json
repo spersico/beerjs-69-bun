@@ -1,0 +1,10 @@
+{
+  "name": "beerjs-69-bun",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "dependencies": {
+    "bun-types": "^0.2.1",
+    "hono": "^2.3.2"
+  }
+}
