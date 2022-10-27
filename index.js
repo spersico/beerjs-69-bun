@@ -1,14 +1,10 @@
-import Fastify from 'fastify';
-const fastify = Fastify({});
+import express from 'express';
+const app = express();
 
-// Declare a route
-fastify.get('/', (request, reply) => {
-  reply.send('Tengo sed, quiero birra');
+app.get('/', (req, res) => {
+  res.send('Hello BeerJS!');
 });
 
-// Run the server!
-fastify.listen({ port: 8000 }, (err, address) => {
-  if (err) throw err;
-  console.log('Dale nomás');
-  // Server is now listening on ${address}
+app.listen(8000, () => {
+  console.log(`Lito el poio`);
 });
