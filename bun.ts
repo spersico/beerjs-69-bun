@@ -12,6 +12,10 @@ api.post('/posts', async (c) => {
   return c.json({ incoming: post });
 });
 
+api.get('/posts', async (c) => {
+  return c.json({ date: new Date().toJSON() });
+});
+
 app.route('/api', api);
 
 export default {
