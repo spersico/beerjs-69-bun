@@ -1,26 +1,8 @@
-import { Hono } from 'hono';
-import { logger } from 'hono/logger';
-import { cors } from 'hono/cors';
-
-const app = new Hono();
-app.use('*', logger());
-app.use('*', cors());
-
-const api = new Hono();
-api.post('/posts', async (c) => {
-  const post = await c.req.json();
-  return c.json({ incoming: post });
-});
-
-app.get('/', async (c) => {
-  return c.text('Hello BeerJS');
-});
-
-app.route('/api', api);
-
 export default {
   port: 8000,
-  fetch: app.fetch,
+  fetch(_) {
+    return new Response('Hello, Beerjs!');
+  },
 };
 
 // bun bun.ts
